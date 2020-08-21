@@ -1,6 +1,12 @@
+/*
+	--- Versionamento ---
+	01/06/2018 - Thais - Primeira vers�o
+	05/06/2019 - Thais - Reformula��o menu tirando o position absolute, passei regras para c�
+	--- Fim Versionamento ---
+*/
+
 
 #menu{
-	width: 200px;
 	vertical-align: top;
 	padding-left: 0px;
 	display: inline;
@@ -59,9 +65,14 @@
 
 #menu > ul{
 	padding: 0px;
+
 }
 
 #menu li{
+	/*border-bottom: 1px solid #bbb;
+	background-color: #B3B3B3FF;
+	color: #333;
+	*/
 	list-style-type: none;
 	text-decoration: none;
 	cursor:pointer;

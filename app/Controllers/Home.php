@@ -2,6 +2,7 @@
 
 	namespace App\Controllers;
 	use App\Models\PessoaModel;
+	include APPPATH . "Libraries/Funcoes.php";
 
 class Home extends BaseController{
 	
@@ -32,10 +33,7 @@ class Home extends BaseController{
             'login' => 'required|min_length[4]|max_length[255]',
             'senha'  => 'required|min_length[3]'])){
 			if($Model->login($this->request->getPost("login"),$this->request->getPost("senha"))){
-				$data["Pessoa"] = $Model->pessoaDaSessao();
-				echo view('templates/Cabecalho',$data);
-				echo view('templates/Principal',$data);
-				echo view('templates/Rodape',$data);
+				GoToURL("/");
 				$erro = false;
 			}else{
 				$msgErro = "Login ou senha incorretos. Por favor verifique e tente novamente.";
@@ -55,5 +53,10 @@ class Home extends BaseController{
 
 	}
 
+	public function sair(){
+		$session = \Config\Services::session();
+		$session->remove("sessao");
+		GoToURL("/");
+	}
 
 }
