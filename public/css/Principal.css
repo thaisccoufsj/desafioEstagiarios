@@ -1,0 +1,27 @@
+#rodape{
+	margin-top: 0px;
+	background-color: #000;
+	float: left;
+	width: 100%;
+	color: #FFF;
+	font-size: 12px;
+	text-align: center;
+	position: absolute;
+	bottom:0px;
+	margin-bottom: 0px;
+}
+
+
+@media print{
+	#rodape{
+		display: none;
+	}
+}
+
+#diverro{
+	background-color: #FFC5C5;
+	border: 1px solid #FF8585;
+	padding: 10px;
+	text-align: center;
+	margin: 20px;
+}

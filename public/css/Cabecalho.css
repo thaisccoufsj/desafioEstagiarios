@@ -1,0 +1,36 @@
+
+body{
+	margin:0px;
+}
+
+#cabecalho{
+	background-color: #4D4D4D;
+	width: 100%;
+	color: #FFF;
+	display: table;
+	height: 80px;
+}
+
+#cabecalho > p{
+    margin:0px;
+    color: #EEE;
+    padding-left: 10px;
+	padding-right: 10px;
+    display: table-cell;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+#infologado{
+	background-color:black;
+	color: white;
+	text-align: right;
+	font-size: 11px;
+	padding-right: 10px;
+}
+
+@media print{
+	#infologado{
+		display: none;
+	}
+}
