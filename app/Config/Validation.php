@@ -33,4 +33,42 @@ class Validation
 	//--------------------------------------------------------------------
 	// Rules
 	//--------------------------------------------------------------------
+
+	public $pessoa = [
+		"nome"  => "min_length[5]|required",
+		"usuario" =>  "min_length[4]|required",
+		"senha" => 	"min_length[6]|required"
+	];
+
+	public $pessoa_errors = [
+		"nome" => [
+			"required" => "Por favor informe seu nome.",
+			"min_length" => "O nome deve conter no mínimo 5 caracteres"
+		],
+		"usuario" => [
+			"required" => "Por favor informe o login de acesso ao sistema.",
+			"min_length" => "O login deve conter no mínimo 4 caracteres"
+		],
+		"senha" => [
+			"required" => "Por favor informe a senha.",
+			"min_length" => "A senha deve conter no mínimo 6 caracteres"
+		]
+		];
+
+	public $pessoaEdicao = [
+		"nome"  => "min_length[5]|required",
+		"usuario" =>  "min_length[4]|required"
+	];
+	
+	public $pessoaEdicao_errors = [
+		"nome" => [
+			"required" => "Por favor informe seu nome.",
+			"min_length" => "O nome deve conter no mínimo 5 caracteres"
+		],
+		"usuario" => [
+			"required" => "Por favor informe o login de acesso ao sistema.",
+			"min_length" => "O login deve conter no mínimo 4 caracteres"
+		]
+		];
+
 }

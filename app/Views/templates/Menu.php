@@ -15,14 +15,24 @@
             </div>
         </li>
 
-        <ul id='contenedor_menu_cadastro' style='display:none'>
-            <li style='padding-left:20px;position:relative;' onClick="javascript:location.href = '<?php echo base_url("pessoa/cadastro");?>'">
+        <?php 
+
+            $style =  "style='display:none'";
+
+            if(strpos($_SERVER["REQUEST_URI"],"cadastrar") !== FALSE){
+                $style = "";
+            }
+        
+        ?>
+
+        <ul id='contenedor_menu_cadastro' <?php echo $style ?>>
+            <li style='padding-left:20px;position:relative;' onClick="javascript:location.href = '<?php echo base_url("pessoa/cadastrar");?>'">
                 <div class='contenedor_menu'>
                     <div class='imagem_menu'><img src='<?php echo base_url();?>/imagens/Pessoa.png' align='left'></div>
                     <div class='texto_menu'><span>Pessoa</span></div>
                 </div>
             </li>
-            <li style='padding-left:20px;position:relative;' onClick="javascript:location.href = '<?php echo base_url("apontamento/cadastro");?>'">
+            <li style='padding-left:20px;position:relative;' onClick="javascript:location.href = '<?php echo base_url("apontamento/cadastrar");?>'">
                 <div class='contenedor_menu'>
                     <div class='imagem_menu'><img src='<?php echo base_url();?>/imagens/Apontamento.png' align='left'></div>
                     <div class='texto_menu'><span>Apontamento</span></div>
@@ -30,12 +40,42 @@
             </li>
         </ul>
 
-        <li style='padding-left:10px;position:relative;' onClick="javascript:location.href = '<?php echo base_url("apontamento/lista");?>'">
+        <li style='padding-left: 10px;position: relative' onClick="javascript:afmenu('listar')">
             <div class='contenedor_menu'>
-                <div class='imagem_menu'><img src='<?php echo base_url();?>/imagens/Lista_Apontamentos.png' align='left'></div>
-                <div class='texto_menu'><span>Apontamentos</span></div>
+                <div class='imagem_menu'><img src='<?php echo base_url();?>/imagens/Lista.png' align='left'></div> 
+                <div class='texto_menu'><span>Listar</span></div>
+                <img id='imagem_menu_listar' src='<?php echo base_url();?>/imagens/seta_menu.png' class='seta_menu'>
             </div>
         </li>
+
+        <?php 
+
+            $style =  "style='display:none'";
+
+            if(strpos($_SERVER["REQUEST_URI"],"listar") !== FALSE){
+                $style = "";
+            }
+        
+        ?>
+
+        <ul id='contenedor_menu_listar' <?php echo $style ?>>
+
+            <li style='padding-left:10px;position:relative;' onClick="javascript:location.href = '<?php echo base_url("pessoa/listar");?>'">
+                <div class='contenedor_menu'>
+                    <div class='imagem_menu'><img src='<?php echo base_url();?>/imagens/Pessoa.png' align='left'></div>
+                    <div class='texto_menu'><span>Pessoas</span></div>
+                </div>
+            </li>
+
+
+            <li style='padding-left:10px;position:relative;' onClick="javascript:location.href = '<?php echo base_url("apontamento/listar");?>'">
+                <div class='contenedor_menu'>
+                    <div class='imagem_menu'><img src='<?php echo base_url();?>/imagens/Apontamento.png' align='left'></div>
+                    <div class='texto_menu'><span>Apontamentos</span></div>
+                </div>
+            </li>
+
+        </ul>
 
         <li style='padding-left:10px;position:relative;' onClick="javascript:location.href = '<?php echo base_url("home/sair");?>'">
             <div class='contenedor_menu'>
@@ -46,6 +86,7 @@
 
     </ul>
 </div>
+<DIV id='meio'>
 
 <script>
 

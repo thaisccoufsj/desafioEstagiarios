@@ -12,10 +12,12 @@ class Home extends BaseController{
 		$data['Pessoa'] = $Model->pessoaDaSessao();
 		
 		if(!is_object($data['Pessoa'])){
+			$data['menu'] = false;
 			echo view('templates/Cabecalho', $data);
 			echo view('templates/Login', $data);
 			echo view('templates/Rodape', $data);
 		}else{
+			$data['menu'] = true;
 			echo view('templates/Cabecalho', $data);
 			echo view('templates/Menu', $data);
 			echo view('templates/Principal', $data);
