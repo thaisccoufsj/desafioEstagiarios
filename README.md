@@ -17,11 +17,11 @@ SQL para garantir privilégios:
     FLUSH PRIVILEGES;
 
 ## Levantamento do Servidor
-Para iniciar o servidor basta acessar o diretório do projeto e rodar o comando : 'php spark serve'
-O sistema será entrão acessado pelo caminho : 'http://localhost:8080'
+Para iniciar o servidor basta acessar o diretório do projeto e rodar o comando : 'php spark serve'.
+O sistema será então acessado pelo caminho : 'http://localhost:8080'
 
 ## Utilização
-Após restaurar o banco de dados o sistema poderá ser acessado pelo usuário/senha: admin/admin
+Após restaurar o banco de dados o sistema poderá ser acessado pelo usuário/senha: admin/admin .
 Uma vez logado no sistema o usuário terá acesso ao menu que conterá as funcionalidades.
 
 ## Observações
@@ -29,4 +29,4 @@ O sistema somenta irá listar os apontamentos do usuário logado por segurança.
 Nas listagens é possível acessar o item requerido clicando uma vez no id ou com duplo clique em qualquer informação dele.
 Não é possível excluir uma pessoa que tenha apontamentos vinculados, senão a pessoa do apontamento ficaria inválida.
 Como o sistema é para estagiários apontarem os horários de trabalho, não é possível informar um data futura.
-Ao acessar um formulário de cadastro ou edição ao clicar no contido no título será feito um redirecionamento para a listagem.
+Ao acessar um formulário de cadastro ou edição ao clicar no nome contido no título será feito um redirecionamento para a listagem.
