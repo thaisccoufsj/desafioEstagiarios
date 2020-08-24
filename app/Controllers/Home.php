@@ -2,7 +2,7 @@
 
 	namespace App\Controllers;
 	use App\Models\PessoaModel;
-	include APPPATH . "Libraries/Funcoes.php";
+	include APPPATH . "Libraries/Essenciais.php";
 
 class Home extends BaseController{
 	
@@ -30,6 +30,7 @@ class Home extends BaseController{
 
 		$Model = new PessoaModel();
 		$erro = true;
+		$data['menu'] = false;
 
 		if($this->request->getMethod() === 'post' && $this->validate([
             'login' => 'required|min_length[4]|max_length[255]',

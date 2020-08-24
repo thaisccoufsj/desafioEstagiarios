@@ -4,7 +4,7 @@
         $Modo = "Adicionar";
 
     echo "<div id='titulo_pagina'><a href='/pessoa/listar'>Pessoas</a> :: $Modo</div>";
-    echo "<form id='formulario' action='/pessoa/salvar' method='post'>";
+    echo form_open('/pessoa/salvar',['id'=>'formulario','method'=>'post']);
     echo "<div class='contenedor_campo' style='margin-bottom:10px;'>";
     echo form_label("Id","idPessoa",['style' => 'margin-right:2px']);
     echo form_label("*","",['style' => 'margin-right:5px;color:blue;']);
@@ -26,11 +26,13 @@
 
     echo form_input(["type" => 'password','name' => 'senha','id' => 'senha', 'maxlength' => "255",'style' => 'margin-right:10px']);
     echo "</div><div class='contenedor_campo' style='width:100%;'>";
-    echo form_input(["style" => 'margin-top:5px;float:right;margin-right:5px;','type' => 'button','onclick'=> "location.href='/pessoa/listar'",'value' => 'Voltar']);
+    if($Modo != "Adicionar")
+        echo form_input(["style" => 'margin-top:5px;float:right;margin-right:5px;','type' => 'button','onclick'=> "confirmarRedirecionamento('/pessoa/excluir/' + objeto('idPessoa').value,'e')",'value' => 'Excluir']);
     echo form_submit(["style" => 'margin-top:5px;float:right;margin-right:5px;','type' => 'button','onclick'=> "enviarFormulario('formulario')",'value' => 'Salvar']);
+    echo form_input(["style" => 'margin-top:5px;float:right;margin-right:5px;','type' => 'button','onclick'=> "confirmarRedirecionamento('/pessoa/listar','l')",'value' => 'Voltar']);
     echo "</div></form>";
 
-    if(is_object(@$Pessoa)){
+    if(is_object(@$Pessoa) && ($Modo != "Adicionar")){
         echo "<script>\n";
         foreach($Pessoa as $campo=>$valor){
             echo "objeto('$campo').value = '". esc($valor) . "';\n";

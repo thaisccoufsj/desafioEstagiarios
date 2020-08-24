@@ -15,4 +15,8 @@
         return preg_replace("/<br>$/","",$TXT);
     }
 
+    function ComecaCom($OQue, $ComQue){
+		return (substr($OQue, 0, strlen($ComQue)) == $ComQue);
+	}
+
 ?>

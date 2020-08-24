@@ -6,10 +6,16 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/css/Principal.css?Versao=<?php echo date("Ymd"); ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/css/Cabecalho.css?Versao=<?php echo date("Ymd"); ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/css/Menu.css?Versao=<?php echo date("Ymd"); ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/js/jquery-ui.css?Versao=<?php echo date("Ymd"); ?>">
     <SCRIPT src='<?php echo base_url();?>/js/Funcoes.js?Versao=<?php echo date("Ymd"); ?>'></SCRIPT>
     <SCRIPT src='<?php echo base_url();?>/js/jquery-1.6.4.min.js'></SCRIPT>
+    <SCRIPT src='<?php echo base_url();?>/js/Mascaras.js'></SCRIPT>
+    <SCRIPT src='<?php echo base_url();?>/js/jquery-ui.js'></SCRIPT>
 </head>
 <body>
+
+<DIV id='mmmmm'>
+
     <DIV id='cabecalho'>
        <p>Controle de Apontamentos</p>
     </DIV>
@@ -25,4 +31,3 @@
 
         ?>
     </DIV>
-

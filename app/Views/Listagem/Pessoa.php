@@ -1,7 +1,11 @@
 <?php
 
     echo "<div id='titulo_pagina'>Pessoas</div>";
-    
+
+    if(@$Sucesso != ""){
+        echo $Sucesso;
+    }
+
     if(count($Pessoas) > 0){
         
         echo "<table class='listbox' align='center'>

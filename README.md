@@ -1,64 +1,32 @@
-# CodeIgniter 4 Application Starter
+# Controle de apontamentos
 
-## What is CodeIgniter?
-
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible, and secure. 
-More information can be found at the [official site](http://codeigniter.com).
-
-This repository holds a composer-installable app starter.
-It has been built from the 
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
-
-More information about the plans for version 4 can be found in [the announcement](http://forum.codeigniter.com/thread-62615.html) on the forums.
-
-The user guide corresponding to this version of the framework can be found
-[here](https://codeigniter4.github.io/userguide/). 
-
-## Installation & updates
-
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
-
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
-
-## Setup
-
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
-
-## Important Change with index.php
-
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
-
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
-
-**Please** read the user guide for a better explanation of how CI4 works!
-The user guide updating and deployment is a bit awkward at the moment, but we are working on it!
-
-## Repository Management
-
-We use Github issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
-
-This repository is a "distribution" one, built by our release preparation script. 
-Problems with it can be raised on our forum, or as issues in the main repository.
-
-## Server Requirements
-
-PHP version 7.2 or higher is required, with the following extensions installed: 
+## Requisitos do servidor
+PHP versão 7.2 ou superior, com as seguintes extensões instaladas: 
 
 - [intl](http://php.net/manual/en/intl.requirements.php)
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+Adicionalmente, tenha certeza que as seguintes extensões estão habilitadas no seu PHP:
 
-- json (enabled by default - don't turn it off)
 - [mbstring](http://php.net/manual/en/mbstring.installation.php)
 - [mysqlnd](http://php.net/manual/en/mysqlnd.install.php)
-- xml (enabled by default - don't turn it off)
+
+## Configuração do Banco de Dados
+Restaurar o banco de dados (estagiarios.sql) e criar um usuário no banco de dados chamado 'solides' com senha 'solides123' e garantir os privilégios no banco restaurado.
+SQL para garantir privilégios:
+    GRANT ALL PRIVILEGES ON estagiarios.* TO 'solides'@'%';
+    FLUSH PRIVILEGES;
+
+## Levantamento do Servidor
+Para iniciar o servidor basta acessar o diretório do projeto e rodar o comando : 'php spark serve'
+O sistema será entrão acessado pelo caminho : 'http://localhost:8080'
+
+## Utilização
+Após restaurar o banco de dados o sistema poderá ser acessado pelo usuário/senha: admin/admin
+Uma vez logado no sistema o usuário terá acesso ao menu que conterá as funcionalidades.
+
+## Observações
+O sistema somenta irá listar os apontamentos do usuário logado por segurança.
+Nas listagens é possível acessar o item requerido clicando uma vez no id ou com duplo clique em qualquer informação dele.
+Não é possível excluir uma pessoa que tenha apontamentos vinculados, senão a pessoa do apontamento ficaria inválida.
+Como o sistema é para estagiários apontarem os horários de trabalho, não é possível informar um data futura.
+Ao acessar um formulário de cadastro ou edição ao clicar no contido no título será feito um redirecionamento para a listagem.

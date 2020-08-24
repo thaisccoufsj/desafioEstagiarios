@@ -19,7 +19,7 @@
 
             $style =  "style='display:none'";
 
-            if(strpos($_SERVER["REQUEST_URI"],"cadastrar") !== FALSE){
+            if((strpos($_SERVER["REQUEST_URI"],"cadastrar") !== FALSE) || (strpos($_SERVER["REQUEST_URI"],"salvar") !== FALSE)){
                 $style = "";
             }
         
@@ -77,7 +77,7 @@
 
         </ul>
 
-        <li style='padding-left:10px;position:relative;' onClick="javascript:location.href = '<?php echo base_url("home/sair");?>'">
+        <li style='padding-left:10px;position:relative;' onClick="javascript:if(confirm('Tem certeza que deseja sair do sistema?'))location.href = '<?php echo base_url("home/sair");?>'">
             <div class='contenedor_menu'>
                 <div class='imagem_menu'><img src='<?php echo base_url();?>/imagens/Sair.png' align='left'></div>
                 <div class='texto_menu'><span>Sair</span></div>

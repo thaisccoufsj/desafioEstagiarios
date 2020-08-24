@@ -114,17 +114,32 @@
             return $query->getRow();
         }
 
-        public function listarPessoas($pagina = 1){
-            $itensPorPagina = 50;
+        public function listarPessoas(){
             $builder = $this->db->table($this->table);
-            $query = $builder->get();
             $this->totalBusca = $builder->countAllResults();
-            $query->freeResult();
-            
-            $builder = $this->db->table($this->table);
-            $builder->limit($itensPorPagina * ($pagina -1),$itensPorPagina);
             $query = $builder->get();
             return $query->getResultArray();
+        }
+        
+        public function fecharConexao(){
+            $this->db->close();
+        }
+
+        public function excluir($idPessoa){
+            $builder = $this->db->table("APONTAMENTOS");
+            $builder->where("idPessoa",$idPessoa);
+            $query = $builder->get();
+            $row = $query->getRow();
+
+            if(isset($row)){
+                $this->msgErro = "Existem um ou mais apontamentos desta pessoa. Portanto não é possível realizar a exclusão.";
+                return false;
+            }
+
+            $builder = $this->db->table($this->table);
+            $builder->where("idPessoa",$idPessoa);
+            return $builder->delete();
+
         }
 
     }

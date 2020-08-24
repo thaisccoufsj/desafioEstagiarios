@@ -69,6 +69,26 @@ class Validation
 			"required" => "Por favor informe o login de acesso ao sistema.",
 			"min_length" => "O login deve conter no mínimo 4 caracteres"
 		]
-		];
+	];
+
+	public $apontamento = [
+		"data"  => "exact_length[10]|required",
+		"horaChegadaEmpresa" =>  "exact_length[5]|required",
+		"idPessoa" => 	"required"
+	];
+
+	public $apontamento_errors = [
+		"data"  => [
+			"exact_length" => "A data informada é inválida",
+			"required" => "A data do apontamento deve ser informado"
+		],
+		"horaChegadaEmpresa" =>  [
+			"exact_length" => "A hora de chegada na empresa é inválida",
+			"required" => "Hora de chegada na empresa não informada"
+		],
+		"idPessoa" => 	[
+			"required" => "A pessoa não foi informada"
+		]
+	];
 
 }
