@@ -25,8 +25,8 @@ Após restaurar o banco de dados o sistema poderá ser acessado pelo usuário/se
 Uma vez logado no sistema o usuário terá acesso ao menu que conterá as funcionalidades.
 
 ## Observações
-O sistema somenta irá listar os apontamentos do usuário logado por segurança.<br>
-Nas listagens é possível acessar o item requerido clicando uma vez no id ou com duplo clique em qualquer informação dele.<br>
-Não é possível excluir uma pessoa que tenha apontamentos vinculados, senão a pessoa do apontamento ficaria inválida.<br>
-Como o sistema é para estagiários apontarem os horários de trabalho, não é possível informar um data futura.<br>
-Ao acessar um formulário de cadastro ou edição ao clicar no nome contido no título será feito um redirecionamento para a listagem.
+- O sistema somenta irá listar os apontamentos do usuário logado por segurança.<br>
+- Nas listagens é possível acessar o item requerido clicando uma vez no id ou com duplo clique em qualquer informação dele.<br>
+- Não é possível excluir uma pessoa que tenha apontamentos vinculados, senão a pessoa do apontamento ficaria inválida.<br>
+- Como o sistema é para estagiários apontarem os horários de trabalho, não é possível informar um data futura.<br>
+- Ao acessar um formulário de cadastro ou edição ao clicar no nome contido no título será feito um redirecionamento para a listagem.
